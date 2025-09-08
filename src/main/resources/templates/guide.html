@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="project-1.html"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap.min.css">
+    <script src="../assets/bootstrap.min.js"></script>
+    <style>
+        body{
+            background-image: url(../assets/images/summit-1754735.jpg);
+            background-size: cover;
+            
+        }
+        
+   
+
+        .guide_cont{
+            height: fit-content;
+            width: 80vw;
+            background-color: rgba(255, 255, 255, 0.463);
+            background-color: rgba(0, 0, 0, 0.499);
+            margin: 100px auto;
+            margin-bottom: 300px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            justify-content: center;
+            row-gap: 20px;
+            column-gap: 140px;
+            color: white;
+            box-shadow: 0px 0px 15px 5px aqua;
+            border-radius: 40px;
+
+
+        }
+
+        .guide{
+            padding-top: 30px;
+            height: 280px;
+            
+            width: 240px;
+            /* border-radius: 100px; */
+            text-align: center;
+            /* background-color: aquamarine; */
+            overflow: hidden;
+           
+        }
+        h3{
+            padding-top: 5px;
+            color: aqua ;
+        }
+       
+        .guide:hover{
+            height: 85vh;
+            scrollbar-width: none;
+            padding: 40px;
+            width: 80vw;
+            position: absolute;
+            text-align: justify;
+            background-color: rgb(255, 255, 255);
+            transform: scale(1.1);
+            text-decoration: none;
+            transition-timing-function: ease-in-out;
+            border-radius: 40px;
+            box-shadow: 0px 0px 15px 5px aqua;
+            overflow: scroll;
+            color: black;
+        }
+
+        #g_img{
+            height: 200px;
+            width: 200px;
+            /* min-height: auto;
+            min-width: auto; */
+            border-radius: 150px;
+            box-shadow: 0px 0px 5px 5px aqua;
+
+        }
+
+        
+footer{
+    min-height: fit-content;
+    /* height: 60em; */
+    width: 100vw;
+    background-color: rgb(94, 215, 234);
+
+}
+
+.foot-top{
+    height: 50px;
+    height: fit-content;
+    width: 50px;
+    border-radius: 100px;
+    background-color: rgb(94, 215, 234);
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+    transform: translateY(-200px);
+    margin: auto;
+    
+}
+
+
+.foot_box{
+    height: 40vh;
+    height: auto;
+    width: 60vw;
+    margin: auto;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    border-radius: 40px;
+    transform: translateY(-180px);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 20px;
+    padding: 35px;
+
+
+
+}
+
+
+
+
+
+.ftr_li{
+    display: flex;
+    color: gray;
+    text-decoration: none;
+    animation-name: screen;
+    /* -ms-text-size-adjust: auto; */
+    /* -webkit-text-size-adjust: auto; */
+
+   
+}
+/* @media (max-height:) {
+    font-size: 1px;
+} */
+
+
+.foot_box1{
+    height: 20vh;
+    width: 60vw;
+    margin: auto;
+    /* background-color: rgb(255, 255, 255); */
+    border-radius: 40px;
+    transform: translateY(-200px);
+    
+
+}
+
+.foot_box2{
+    background-color: gray;
+    height: 2px;
+    width: 80%;
+    text-align: center;
+    margin: 100px auto;
+
+}
+
+.foot_box3{
+    
+    height: 20px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    font-size: xx-large;
+    transform: translateY(-50px);
+    word-spacing: 20px;
+
+
+}
+
+.foot_box4{
+
+    height: auto;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    
+    
+}
+
+
+    </style>
+</head>
+<body>
+        <!-- nav bar -->
+
+    <nav class="navbar navbar-expand-lg fixed-top ">
+        <div class="container-fluid con ">
+          <a class="navbar-brand text-white" href="#" ><h2 style=" color: aqua;">Thrill<span>.</span> com</h2></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse con" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" th:href="@{/treks/}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" th:href="@{/treks/#top_trip}">Top Trips</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" th:href="@{/treks/guide}">Guide</a></li>
+                  <li><a class="dropdown-item" th:href="@{/treks/safety}">Safety</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" th:href="@{/treks/aboutus}">About Us</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Shop with us</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+              <a class="btn btn-primary text-white " type="submit" th:href="@{/treks/Register}"><i class="fa-regular fa-circle-user" style="font-size: x-large;"></i></a>
+            </form>
+          </div>
+        </div>
+        </nav>
+
+        <!-- guide cards -->
+
+    <div class="guide_cont" >
+        <div class="guide scrollable">
+            <img id="g_img" src="../assets/images/Most beautiful place in india.jpg" alt="">
+            <h3>Shan Shrivastev</h3>
+            <p>Treaking is my passion and my passion is my love.</p>
+                <div class="guide_info">
+        <div class="info">
+<br>
+<h3>Contact Information:</h3>
+<ul>
+    <li>Phone: (123) 456-7890</li>
+    <li>Email: Shanshrivastav@example.com</li>
+    <li>LinkedIn: linkedin.com/in/johndoe</li>
+    <li>Address: 123 Adventure Lane, Mountain Town, CO 80401</li>
+</ul>
+
+
+<h3>Professional Summary:</h3>
+
+<h5>Experienced and enthusiastic mountain trekking guide with over 8 years of experience leading groups through challenging terrains and high-altitude environments. Adept at route planning, safety management, and providing exceptional customer service. Passionate about outdoor adventure and committed to ensuring memorable and safe trekking experiences.
+</h5>
+
+
+<h3>Experience:</h3>
+
+<strong>Mountain Trekking Guide 
+    Adventure Trails Inc., Boulder, CO  
+    June 2018 – Present</strong>
+
+- Led groups of up to 20 trekkers on multi-day expeditions through the Rocky Mountains, ensuring safety and adherence to planned routes.
+- Developed and implemented safety protocols and risk management plans for high-altitude trekking.
+- Provided detailed briefings and educational sessions on environmental conservation, local wildlife, and navigation techniques.
+- Maintained high levels of customer satisfaction through excellent communication, support, and personalized guidance.
+
+**Trekking Instructor**  
+*Summit Ventures*, Aspen, CO  
+*March 2015 – May 2018*
+
+- Conducted training programs for novice and experienced trekkers, focusing on climbing techniques, survival skills, and first aid.
+- Coordinated with local authorities to ensure compliance with regulations and secure necessary permits for trekking activities.
+- Assisted in designing and refining trekking routes to accommodate varying skill levels and enhance the trekking experience.
+
+**Outdoor Adventure Assistant**  
+*Peak Explorers Ltd.*, Vail, CO  
+*June 2012 – February 2015*
+
+- Supported senior guides in managing group activities, setting up campsites, and ensuring the availability of essential supplies.
+- Contributed to route scouting and maintenance, including trail marking and hazard identification.
+- Assisted clients with gear selection and provided guidance on best practices for trekking in diverse environments.
+
+---
+
+**Education:**
+
+**Bachelor of Science in Outdoor Recreation Management**  
+*University of Colorado Boulder*, Boulder, CO  
+*Graduated: May 2012*
+
+**Certifications:**
+
+- Wilderness First Responder (WFR) – National Outdoor Leadership School (NOLS)
+- Certified Outdoor Guide – American Mountain Guides Association (AMGA)
+- Leave No Trace Master Educator
+
+---
+
+**Skills:**
+
+- Advanced navigation and map-reading abilities
+- High-altitude first aid and emergency response
+- Excellent interpersonal and communication skills
+- Proficiency in outdoor survival techniques
+- Strong knowledge of environmental conservation practices
+
+---
+
+**Languages:**
+
+- English (Fluent)
+- Spanish (Conversational)
+
+---
+
+**References:**
+
+Available upon request
+
+---
+
+Feel free to adjust the details to better match your actual experience and skills!
+        </div>
+    </div>
+  
+        </div>
+        <div class="guide scrollable">
+            <img id="g_img" src="../assets/images/Adventure junkie camps and explores with his beloved dog.jpg" alt="">
+            <h3>Roy Ecliven</h3>
+            <p>Be fit and stay active and Treak. </p>
+            <div class="guide_info">
+                <div class="info">
+        <br>
+        <h3>Contact Information:</h3>
+        <ul>
+            <li>Phone: (123) 456-7890</li>
+            <li>Email: RoyEcliven@example.com</li>
+            <li>LinkedIn: linkedin.com/in/RoyEcliven</li>
+            <li>Address: 456 Adventure Lane, Mountain Town, CO 80401</li>
+        </ul>
+        
+        
+        <h3>Professional Summary:</h3>
+        
+        <h5>Experienced and enthusiastic mountain trekking guide with over 10 years of experience leading groups through challenging terrains and high-altitude environments. Adept at route planning, safety management, and providing exceptional customer service. Passionate about outdoor adventure and committed to ensuring memorable and safe trekking experiences.
+        </h5>
+        
+        
+        <h3>Experience:</h3>
+        
+        <strong>Mountain Trekking Guide 
+            Adventure Trails Inc., Boulder, CO  
+            June 2018 – Present</strong>
+        
+        - Led groups of up to 20 trekkers on multi-day expeditions through the Rocky Mountains, ensuring safety and adherence to planned routes.
+        - Developed and implemented safety protocols and risk management plans for high-altitude trekking.
+        - Provided detailed briefings and educational sessions on environmental conservation, local wildlife, and navigation techniques.
+        - Maintained high levels of customer satisfaction through excellent communication, support, and personalized guidance.
+        
+        **Trekking Instructor**  
+        *Summit Ventures*, Aspen, CO  
+        *March 2015 – May 2018*
+        
+        - Conducted training programs for novice and experienced trekkers, focusing on climbing techniques, survival skills, and first aid.
+        - Coordinated with local authorities to ensure compliance with regulations and secure necessary permits for trekking activities.
+        - Assisted in designing and refining trekking routes to accommodate varying skill levels and enhance the trekking experience.
+        
+        **Outdoor Adventure Assistant**  
+        *Peak Explorers Ltd.*, Vail, CO  
+        *June 2012 – February 2015*
+        
+        - Supported senior guides in managing group activities, setting up campsites, and ensuring the availability of essential supplies.
+        - Contributed to route scouting and maintenance, including trail marking and hazard identification.
+        - Assisted clients with gear selection and provided guidance on best practices for trekking in diverse environments.
+        
+        ---
+        
+        **Education:**
+        
+        **Bachelor of Science in Outdoor Recreation Management**  
+        *University of Colorado Boulder*, Boulder, CO  
+        *Graduated: May 2012*
+        
+        **Certifications:**
+        
+        - Wilderness First Responder (WFR) – National Outdoor Leadership School (NOLS)
+        - Certified Outdoor Guide – American Mountain Guides Association (AMGA)
+        - Leave No Trace Master Educator
+        
+        ---
+        
+        **Skills:**
+        
+        - Advanced navigation and map-reading abilities
+        - High-altitude first aid and emergency response
+        - Excellent interpersonal and communication skills
+        - Proficiency in outdoor survival techniques
+        - Strong knowledge of environmental conservation practices
+        
+        ---
+        
+        **Languages:**
+        
+        - English (Fluent)
+        - Spanish (Conversational)
+        
+        ---
+        
+        **References:**
+        
+        Available upon request
+        
+        ---
+        
+        Feel free to adjust the details to better match your actual experience and skills!
+                </div>
+            </div>
+
+        </div>
+        <div class="guide scrollable">
+            <img id="g_img" src="../assets/images/bushcraft-8727739.jpg" alt="">
+            <h3>Bear grills</h3>
+            <p>Treaking is as wild as love.</p>
+            <div class="guide_info">
+                <div class="info">
+        <br>
+        <h3>Contact Information:</h3>
+        <ul>
+            <li>Phone: (123) 456-7890</li>
+            <li>Email: Beargrills@example.com</li>
+            <li>LinkedIn: linkedin.com/in/Beargrills</li>
+            <li>Address: 789 Adventure Lane, Mountain Town, CO 80401</li>
+        </ul>
+        
+        
+        <h3>Professional Summary:</h3>
+        
+        <h5>Experienced and enthusiastic mountain trekking guide with over 10 years of experience leading groups through challenging terrains and high-altitude environments. Adept at route planning, safety management, and providing exceptional customer service. Passionate about outdoor adventure and committed to ensuring memorable and safe trekking experiences.
+        </h5>
+        
+        
+        <h3>Experience:</h3>
+        
+        <strong>Mountain Trekking Guide 
+            Adventure Trails Inc., Boulder, CO  
+            June 2018 – Present</strong>
+        
+        - Led groups of up to 20 trekkers on multi-day expeditions through the Rocky Mountains, ensuring safety and adherence to planned routes.
+        - Developed and implemented safety protocols and risk management plans for high-altitude trekking.
+        - Provided detailed briefings and educational sessions on environmental conservation, local wildlife, and navigation techniques.
+        - Maintained high levels of customer satisfaction through excellent communication, support, and personalized guidance.
+        
+        **Trekking Instructor**  
+        *Summit Ventures*, Aspen, CO  
+        *March 2015 – May 2018*
+        
+        - Conducted training programs for novice and experienced trekkers, focusing on climbing techniques, survival skills, and first aid.
+        - Coordinated with local authorities to ensure compliance with regulations and secure necessary permits for trekking activities.
+        - Assisted in designing and refining trekking routes to accommodate varying skill levels and enhance the trekking experience.
+        
+        **Outdoor Adventure Assistant**  
+        *Peak Explorers Ltd.*, Vail, CO  
+        *June 2012 – February 2015*
+        
+        - Supported senior guides in managing group activities, setting up campsites, and ensuring the availability of essential supplies.
+        - Contributed to route scouting and maintenance, including trail marking and hazard identification.
+        - Assisted clients with gear selection and provided guidance on best practices for trekking in diverse environments.
+        
+        ---
+        
+        **Education:**
+        
+        **Bachelor of Science in Outdoor Recreation Management**  
+        *University of Colorado Boulder*, Boulder, CO  
+        *Graduated: May 2012*
+        
+        **Certifications:**
+        
+        - Wilderness First Responder (WFR) – National Outdoor Leadership School (NOLS)
+        - Certified Outdoor Guide – American Mountain Guides Association (AMGA)
+        - Leave No Trace Master Educator
+        
+        ---
+        
+        **Skills:**
+        
+        - Advanced navigation and map-reading abilities
+        - High-altitude first aid and emergency response
+        - Excellent interpersonal and communication skills
+        - Proficiency in outdoor survival techniques
+        - Strong knowledge of environmental conservation practices
+        
+        ---
+        
+        **Languages:**
+        
+        - English (Fluent)
+        - Spanish (Conversational)
+        
+        ---
+        
+        **References:**
+        
+        Available upon request
+        
+        ---
+        
+        Feel free to adjust the details to better match your actual experience and skills!
+                </div>
+            </div>
+            
+        </div>
+        <div class="guide scrollable">
+            <img id="g_img" src="../assets/images/Camping Gear Checklist_ Essential Items for Your Adventure.jpg" alt="">
+            <h3>Anita fernandice</h3>
+            <p>I always top so i treak.</p>
+            <div class="guide_info">
+                <div class="info">
+        <br>
+        <h3>Contact Information:</h3>
+        <ul>
+            <li>Phone: (123) 456-7890</li>
+            <li>Email: Anitafernandice@example.com</li>
+            <li>LinkedIn: linkedin.com/in/Anitafernandice</li>
+            <li>Address: 1011 Adventure Lane, Mountain Town, CO 80401</li>
+        </ul>
+        
+        
+        <h3>Professional Summary:</h3>
+        
+        <h5>Experienced and enthusiastic mountain trekking guide with over 10 years of experience leading groups through challenging terrains and high-altitude environments. Adept at route planning, safety management, and providing exceptional customer service. Passionate about outdoor adventure and committed to ensuring memorable and safe trekking experiences.
+        </h5>
+        
+        
+        <h3>Experience:</h3>
+        
+        <strong>Mountain Trekking Guide 
+            Adventure Trails Inc., Boulder, CO  
+            June 2018 – Present</strong>
+        
+        - Led groups of up to 20 trekkers on multi-day expeditions through the Rocky Mountains, ensuring safety and adherence to planned routes.
+        - Developed and implemented safety protocols and risk management plans for high-altitude trekking.
+        - Provided detailed briefings and educational sessions on environmental conservation, local wildlife, and navigation techniques.
+        - Maintained high levels of customer satisfaction through excellent communication, support, and personalized guidance.
+        
+        **Trekking Instructor**  
+        *Summit Ventures*, Aspen, CO  
+        *March 2015 – May 2018*
+        
+        - Conducted training programs for novice and experienced trekkers, focusing on climbing techniques, survival skills, and first aid.
+        - Coordinated with local authorities to ensure compliance with regulations and secure necessary permits for trekking activities.
+        - Assisted in designing and refining trekking routes to accommodate varying skill levels and enhance the trekking experience.
+        
+        **Outdoor Adventure Assistant**  
+        *Peak Explorers Ltd.*, Vail, CO  
+        *June 2012 – February 2015*
+        
+        - Supported senior guides in managing group activities, setting up campsites, and ensuring the availability of essential supplies.
+        - Contributed to route scouting and maintenance, including trail marking and hazard identification.
+        - Assisted clients with gear selection and provided guidance on best practices for trekking in diverse environments.
+        
+        ---
+        
+        **Education:**
+        
+        **Bachelor of Science in Outdoor Recreation Management**  
+        *University of Colorado Boulder*, Boulder, CO  
+        *Graduated: May 2012*
+        
+        **Certifications:**
+        
+        - Wilderness First Responder (WFR) – National Outdoor Leadership School (NOLS)
+        - Certified Outdoor Guide – American Mountain Guides Association (AMGA)
+        - Leave No Trace Master Educator
+        
+        ---
+        
+        **Skills:**
+        
+        - Advanced navigation and map-reading abilities
+        - High-altitude first aid and emergency response
+        - Excellent interpersonal and communication skills
+        - Proficiency in outdoor survival techniques
+        - Strong knowledge of environmental conservation practices
+        
+        ---
+        
+        **Languages:**
+        
+        - English (Fluent)
+        - Spanish (Conversational)
+        
+        ---
+        
+        **References:**
+        
+        Available upon request
+        
+        ---
+        
+        Feel free to adjust the details to better match your actual experience and skills!
+                </div>
+            </div>
+        </div>
+        <div class="guide scrollable">
+            <img id="g_img" src="../assets/images/Compressible rain jacket for hiking.jpg" alt="">
+            <h3>venita velora</h3>
+            <p>Treaking is hardcore workout which i love.</p>
+            <div class="guide_info">
+                <div class="info">
+        <br>
+        <h3>Contact Information:</h3>
+        <ul>
+            <li>Phone: (123) 456-7890</li>
+            <li>Email: venitavelora@example.com</li>
+            <li>LinkedIn: linkedin.com/in/venitavelora</li>
+            <li>Address: 1213 Adventure Lane, Mountain Town, CO 80401</li>
+        </ul>
+        
+        
+        <h3>Professional Summary:</h3>
+        
+        <h5>Experienced and enthusiastic mountain trekking guide with over 10 years of experience leading groups through challenging terrains and high-altitude environments. Adept at route planning, safety management, and providing exceptional customer service. Passionate about outdoor adventure and committed to ensuring memorable and safe trekking experiences.
+        </h5>
+        
+        
+        <h3>Experience:</h3>
+        
+        <strong>Mountain Trekking Guide 
+            Adventure Trails Inc., Boulder, CO  
+            June 2018 – Present</strong>
+        
+        - Led groups of up to 20 trekkers on multi-day expeditions through the Rocky Mountains, ensuring safety and adherence to planned routes.
+        - Developed and implemented safety protocols and risk management plans for high-altitude trekking.
+        - Provided detailed briefings and educational sessions on environmental conservation, local wildlife, and navigation techniques.
+        - Maintained high levels of customer satisfaction through excellent communication, support, and personalized guidance.
+        
+        **Trekking Instructor**  
+        *Summit Ventures*, Aspen, CO  
+        *March 2015 – May 2018*
+        
+        - Conducted training programs for novice and experienced trekkers, focusing on climbing techniques, survival skills, and first aid.
+        - Coordinated with local authorities to ensure compliance with regulations and secure necessary permits for trekking activities.
+        - Assisted in designing and refining trekking routes to accommodate varying skill levels and enhance the trekking experience.
+        
+        **Outdoor Adventure Assistant**  
+        *Peak Explorers Ltd.*, Vail, CO  
+        *June 2012 – February 2015*
+        
+        - Supported senior guides in managing group activities, setting up campsites, and ensuring the availability of essential supplies.
+        - Contributed to route scouting and maintenance, including trail marking and hazard identification.
+        - Assisted clients with gear selection and provided guidance on best practices for trekking in diverse environments.
+        
+        ---
+        
+        **Education:**
+        
+        **Bachelor of Science in Outdoor Recreation Management**  
+        *University of Colorado Boulder*, Boulder, CO  
+        *Graduated: May 2012*
+        
+        **Certifications:**
+        
+        - Wilderness First Responder (WFR) – National Outdoor Leadership School (NOLS)
+        - Certified Outdoor Guide – American Mountain Guides Association (AMGA)
+        - Leave No Trace Master Educator
+        
+        ---
+        
+        **Skills:**
+        
+        - Advanced navigation and map-reading abilities
+        - High-altitude first aid and emergency response
+        - Excellent interpersonal and communication skills
+        - Proficiency in outdoor survival techniques
+        - Strong knowledge of environmental conservation practices
+        
+        ---
+        
+        **Languages:**
+        
+        - English (Fluent)
+        - Spanish (Conversational)
+        
+        ---
+        
+        **References:**
+        
+        Available upon request
+        
+        ---
+        
+        Feel free to adjust the details to better match your actual experience and skills!
+                </div>
+            </div>
+        </div>
+        <div class="guide scrollable">
+            <img id="g_img" src="../assets/images/download.jpg" alt="">
+            <h3>margrina morense</h3>
+            <p>Treaking is peace of my life.</p>
+            <div class="guide_info">
+                <div class="info">
+        <br>
+        <h3>Contact Information:</h3>
+        <ul>
+            <li>Phone: (123) 456-7890</li>
+            <li>Email: margrinamorense@example.com</li>
+            <li>LinkedIn: linkedin.com/in/margrinamorense</li>
+            <li>Address: 1415 Adventure Lane, Mountain Town, CO 80401</li>
+        </ul>
+        
+        
+        <h3>Professional Summary:</h3>
+        
+        <h5>Experienced and enthusiastic mountain trekking guide with over 10 years of experience leading groups through challenging terrains and high-altitude environments. Adept at route planning, safety management, and providing exceptional customer service. Passionate about outdoor adventure and committed to ensuring memorable and safe trekking experiences.
+        </h5>
+        
+        
+        <h3>Experience:</h3>
+        
+        <strong>Mountain Trekking Guide 
+            Adventure Trails Inc., Boulder, CO  
+            June 2018 – Present</strong>
+        
+        - Led groups of up to 20 trekkers on multi-day expeditions through the Rocky Mountains, ensuring safety and adherence to planned routes.
+        - Developed and implemented safety protocols and risk management plans for high-altitude trekking.
+        - Provided detailed briefings and educational sessions on environmental conservation, local wildlife, and navigation techniques.
+        - Maintained high levels of customer satisfaction through excellent communication, support, and personalized guidance.
+        
+        **Trekking Instructor**  
+        *Summit Ventures*, Aspen, CO  
+        *March 2015 – May 2018*
+        
+        - Conducted training programs for novice and experienced trekkers, focusing on climbing techniques, survival skills, and first aid.
+        - Coordinated with local authorities to ensure compliance with regulations and secure necessary permits for trekking activities.
+        - Assisted in designing and refining trekking routes to accommodate varying skill levels and enhance the trekking experience.
+        
+        **Outdoor Adventure Assistant**  
+        *Peak Explorers Ltd.*, Vail, CO  
+        *June 2012 – February 2015*
+        
+        - Supported senior guides in managing group activities, setting up campsites, and ensuring the availability of essential supplies.
+        - Contributed to route scouting and maintenance, including trail marking and hazard identification.
+        - Assisted clients with gear selection and provided guidance on best practices for trekking in diverse environments.
+        
+        ---
+        
+        **Education:**
+        
+        **Bachelor of Science in Outdoor Recreation Management**  
+        *University of Colorado Boulder*, Boulder, CO  
+        *Graduated: May 2012*
+        
+        **Certifications:**
+        
+        - Wilderness First Responder (WFR) – National Outdoor Leadership School (NOLS)
+        - Certified Outdoor Guide – American Mountain Guides Association (AMGA)
+        - Leave No Trace Master Educator
+        
+        ---
+        
+        **Skills:**
+        
+        - Advanced navigation and map-reading abilities
+        - High-altitude first aid and emergency response
+        - Excellent interpersonal and communication skills
+        - Proficiency in outdoor survival techniques
+        - Strong knowledge of environmental conservation practices
+        
+        ---
+        
+        **Languages:**
+        
+        - English (Fluent)
+        - Spanish (Conversational)
+        
+        ---
+        
+        **References:**
+        
+        Available upon request
+        
+        ---
+        
+        Feel free to adjust the details to better match your actual experience and skills!
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <a href="#" ><div class="foot-top"><i class="fa-solid fa-arrow-up"></i></div></a>
+            <div class="foot_box">
+                <aside id="ftr_li">
+                    <h5>ABOUT THRILLOPHILIA</h5>
+                    <li id="ftr_li"><a th:href="@{/treks/aboutus}" target="_blank">ABOUT US</a></li>
+                    <li id="ftr_li">WE ARE HIRING</li>
+                    <li id="ftr_li">THRILLOPHILIA REVIEWS</li>
+                    <li id="ftr_li">TERMS & CONDITIONS</li>
+                    <li id="ftr_li">PRIVACY POLICIES</li>
+                    <li id="ftr_li">COPYRIGHT POLICIES</li>
+                    <li id="ftr_li">SUPPORT</li>
+                    <li id="ftr_li">Beware of Frauds</li>
+                </aside>
+                <aside id="ftr_li">
+                    <h5>FOR SUPPLIERS</h5>
+                    <li id="ftr_li">LIST YOUR ACTIVITIES</li>
+                    <h5>FOR BRANDS</h5>
+                    <li id="ftr_li">PARTNER WITH US</li>
+                    <li id="ftr_li">DESTINATION MARKETING</li>
+                    
+                </aside>
+                <aside id="ftr_li">
+                    <h5>FOR TRAVELLERS</h5>
+                    <li >GIFT AN EXPERIENCE</li>
+                    <h5>FOR TRAVEL AGENTS</h5>
+                    <li id="ftr_li">SIGN UP AS A AGENT</li>
+                    <li id="ftr_li"><a th:href="@{/treks/admin/adminlogin}" target="_blank" >AGENT LOGIN</a></li>
+                </aside>
+                <aside>
+    
+                </aside>
+            </div>
+    
+            
+            <div class="foot_box1">
+                <div class="foot_box2 text-white"><strong style="font-size: xx-large; text-align: justify; justify-content: center;">Thrill.com</strong></div>
+                <div class="foot_box3 text-white"><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook text-white"></i></a><a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank"><i class="fa-brands fa-instagram text-white"></i></a><a href="https://x.com/?lang=en" target="_blank"><i class="fa-brands fa-twitter text-white"></i></a><a href="https://in.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin text-white"></i></a><a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube text-white"></i></a></div>
+                <div class="foot_box4 text-white">
+                    <p>© 2024 Thrill.com All rights reserved.</p>
+                    <p>The content and images used on this site are copyright protected and copyrights vests with the respective owners. The usage of the content and images on this website is intended to promote the works and no endorsement of the artist shall be implied. Unauthorized use is prohibited and punishable by law.</p>
+                </div>
+            </div>
+    
+    </footer>
+    
+<script>
+    // Get all scrollable divs
+    const scrollableDivs = document.querySelectorAll('.scrollable');
+
+    scrollableDivs.forEach(scrollableDiv => {
+        // Scroll to the top when the mouse moves within the scrollable area
+        document.addEventListener('mousemove', (event) => {
+            const rect = scrollableDiv.getBoundingClientRect();
+            const mouseY = event.clientY - rect.top;
+
+            // If the mouse is in the scrollable area, scroll to the top
+            if (mouseY >= 0 && mouseY <= rect.height) {
+                scrollableDiv.scrollTop = 0; // Scroll to the top
+            }
+        });
+
+        // Reset scroll position to the top when the mouse leaves the scrollable area
+        scrollableDiv.addEventListener('mouseleave', () => {
+            scrollableDiv.scrollTop = 0; // Scroll to the top
+        });
+    });
+</script>
+  
+</body>
+</html>

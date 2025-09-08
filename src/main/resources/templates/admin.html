@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Card Form</title>
+    <link rel="stylesheet" href="../assets/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/project1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* General page style */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f1f8e9; /* Soft Light Green Background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Header style */
+        h1 {
+            background: linear-gradient(45deg, #00bcd4, #00796b); /* Gradient Aqua */
+            color: white;
+            
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            color: #00796b; /* Darker Aqua */
+            margin-left: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+        }
+        
+        /* nav */
+		nav ul {
+		    list-style-type: none;
+		    padding: 0;
+		}
+		
+		nav ul li {
+		    display: inline;
+		    margin-right: 20px;
+		}
+		
+		nav ul li a {
+		    color: white;
+		    text-decoration: none;
+		    font-size: 18px;
+		}
+		
+		.notification{
+			height:40px;
+			weidth: 2000px;
+			
+			align-content: center;
+			text-align: center;	
+		}
+		.fade {
+  			transition: opacity .2s linear
+		}
+	
+		.fade:not(.show) {
+		    opacity: 0
+		}
+		
+		.alert-warning {
+		    color: #664d03;
+		    background-color: #ffdb8f;
+		    border-color: #ffecb5
+		}
+		
+		.btn-close {
+		    box-sizing: content-box;
+		    width: 1em;
+		    height: 1em;
+		    padding: .25em .25em;
+		    color: #000;
+		    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+		    border: 0;
+		    border-radius: .25rem;
+		    opacity: .5
+		}
+
+        /* Card Container */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+            margin: 20px auto;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 10px;
+            color: #00796b;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .card p {
+            margin: 5px 0;
+        }
+
+        .card-body h5 {
+            font-size: 1.2rem;
+            color: #00796b;
+        }
+
+        /* Form styling */
+        form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        form div {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #00796b;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+            border: 2px solid #00796b;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            border-color: #00bcd4;
+            outline: none;
+            background-color: #ffffff;
+        }
+
+
+
+        /* Card Buttons */
+        .btn-aqua {
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-aqua:hover {
+            background-color: #00796b;
+        }
+
+
+  
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            form {
+                padding: 20px;
+            }
+
+            button {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Manage Trekking Packages
+    <nav>
+            <ul>
+                <li><a th:href="@{/treks/admin/userinfo}">View User Info</a></li>
+                <li><a th:href="@{/treks/admin/adminadd}">Insert Trek Cards</a></li>
+                <li><a th:href="@{/treks/admin/AddNewAdmin}">Add New Manager </a></li>
+                <li><a th:href="@{/treks/admin/changepassword}">Change your Password </a></li>
+                <li><a th:href="@{/treks/}">Main Website</a></li>
+            </ul>
+        </nav>
+    </h1>
+    
+         <div th:if="${param.success}">
+		    <div class="notification alert alert-warning alert-dismissible fade show" role="alert">
+			  <strong>NEW TREK CREATED!</strong> You just added a new treeking package.
+			  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+			</div>
+    	</div>
+   
+
+    <h2>Existing Cards</h2>
+    
+  
+    
+    <div class="card-container">
+        <div class="card" th:each="card : ${cards}">
+            <a th:href="@{/treks/{id}(id=${card.id})}" target="_blank">
+                            <img th:src="@{${card.image1}}" class="d-block w-100" alt="..."> 
+            </a>
+            <div class="card-body">
+                <h5 class="card-title" th:text="${card.name}"></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" th:text="${card.duration}"></li>
+                <li class="list-group-item" th:text="${card.rating}"></li>
+                <li class="list-group-item" th:text="${card.price}"></li>
+            </ul>
+            <div class="card-body">
+                <a th:href="@{/treks/admin/edit/{id}(id=${card.id})}" class="btn-aqua">Edit</a>
+                <a th:href="@{/treks/admin/delete/{id}(id=${card.id})}" class="btn-aqua" 
+                   onclick="return confirm('Are you sure you want to delete this card?');">Delete</a>
+            </div>
+        </div>
+    </div>
+
+	<script>
+	setTimeout(function() {
+	    document.querySelector('.alert').remove();
+	}, 10000);</script>
+    <script src="../assets/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>

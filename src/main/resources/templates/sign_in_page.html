@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-in</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap.min.css">
+    <script src="assets/bootstrap.min.js"></script>
+    <style>
+    
+            /* Style the video: 100% width and height to cover the entire window */
+		#myVideo {
+		  position: fixed;  /* Fixed so it doesn't scroll with content */
+		  width: 100%;
+		  height: 100%;
+		  z-index:-1;
+		  object-fit: cover;
+		  top: 0;
+		}
+
+        body{
+              background-image: url(assets/images/friendship-2366955.jpg);
+              background-size: cover;
+              height: 100vh; /* Changed to 100vh */
+            margin: 0; /* Remove default margin */
+
+            }
+            
+         .form{
+             min-height: fit-content;
+             height: 1200px;
+            }
+
+h1{
+    margin: 10vh auto;
+    color: rgba(255, 255, 255);
+    /* color: aqua; */
+    text-shadow: 10px 5px 10px  rgb(14, 13, 13); 
+    /* text-shadow: 0px 5px 10px  aqua;  */
+    
+
+    /* first is x-asix second is y-axis third is blurness  */
+    
+    
+}
+
+ .a {
+            margin: 20px auto; /* Adjusted margin */
+            text-align: center; /* Centered text */
+            max-width: 500px; /* Set a max width */
+            padding: 20px; /* Added padding */
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px; /* Reduced border radius */
+            box-shadow: 0px 0px 15px 5px aqua;
+            box-sizing: border-box;
+        }
+
+        .user-box {
+            position: relative;
+            /* margin-bottom: 30px; /* Added margin for spacing */
+        }
+
+        .user-box .input {
+            width: 100%; /* Full width */
+            padding: 10px; /* Increased padding */
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+        }
+
+        .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: white;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .user-box input:focus ~ label,
+        .user-box input:valid ~ label {
+            top: -20px;
+            left: 0;
+            color: aqua;
+            font-size: 12px;
+        }
+
+        .btn-primary {
+            width: 100%; /* Full width for buttons */
+            padding: 10px; /* Added padding */
+            font-size: 16px; /* Increased font size */
+            margin-top: 20px; /* Added margin */
+        }
+
+
+footer{
+    min-height: fit-content;
+    /* height: 60em; */
+    width: 100vw;
+    background-color: rgb(94, 215, 234);
+
+}
+
+.foot-top{
+    height: 50px;
+    height: fit-content;
+    width: 50px;
+    border-radius: 100px;
+    background-color: rgb(94, 215, 234);
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+    transform: translateY(-200px);
+    margin: auto;
+    
+}
+
+
+.foot_box{
+    height: 40vh;
+    height: auto;
+    width: 60vw;
+    margin: auto;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    border-radius: 40px;
+    transform: translateY(-180px);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 20px;
+    padding: 35px;
+
+
+
+}
+
+
+
+
+
+.ftr_li{
+    display: flex;
+    color: gray;
+    text-decoration: none;
+    animation-name: screen;
+    /* -ms-text-size-adjust: auto; */
+    /* -webkit-text-size-adjust: auto; */
+
+   
+}
+/* @media (max-height:) {
+    font-size: 1px;
+} */
+
+
+.foot_box1{
+    height: 20vh;
+    width: 60vw;
+    margin: auto;
+    /* background-color: rgb(255, 255, 255); */
+    border-radius: 40px;
+    transform: translateY(-200px);
+    
+
+}
+
+.foot_box2{
+    background-color: gray;
+    height: 2px;
+    width: 80%;
+    text-align: center;
+    margin: 100px auto;
+
+}
+
+.foot_box3{
+    
+    height: 20px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    font-size: xx-large;
+    transform: translateY(-50px);
+    word-spacing: 20px;
+
+
+}
+
+.foot_box4{
+
+    height: auto;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    
+    
+}
+
+
+        @media (max-width: 768px) {
+            .a {
+                width: 90%; /* Full width on smaller screens */
+                margin: 20px; /* Adjust margin */
+            }
+
+            .foot_box {
+                flex-direction: column; /* Stack items vertically */
+                align-items: center; /* Center items */
+            }
+
+            .foot_box aside {
+                min-width: 100%; /* Full width for each aside on small screens */
+                margin: 10px 0; /* Adjust margin for vertical stacking */
+            }
+            
+            }
+
+
+
+
+
+
+    </style>
+</head>
+<video autoplay muted loop id="myVideo">
+	  <source src="/assets/images/sun_rise.mp4" type="video/mp4">
+	</video>
+<body background="assets/images/rock-wall-1845128.jpg">
+    <nav class="navbar navbar-expand-lg fixed-top ">
+        <div class="container-fluid con ">
+          <a class="navbar-brand text-white" href="project-1.html" ><h2 style=" color: aqua;">Thrill<span>.</span> com</h2></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <form class="d-flex">
+              <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+              <a class="btn btn-primary text-white" type="submit" th:href="@{/treks/}" ><i class="fa-solid fa-circle-left" style="font-size: x-large;"></i></a>
+            </form>
+        </div>
+        </nav>
+    
+        <!-- registration form -->
+        <center class="form">
+            <h1>Registration Form</h1>
+            <div class="a">
+<form th:action="@{/treks/save}" th:object="${trek}" method="POST">
+    <div class="user-box">
+        <input type="text" class="input" placeholder="Enter Full Name" id="Name" name="name" th:field="*{name}" required>
+        <label for="Name">Full Name</label>
+    </div><br>
+
+    <div class="user-box">
+        <input type="tel" class="input" placeholder="Phone Number" id="phone" name="phone" th:field="*{phone}" required>
+        <label for="phone">Contact Number</label>
+    </div><br>
+
+    <div class="user-box">
+        <input type="number" min="16" max="50" class="input" placeholder="Age" id="age" name="age" th:field="*{age}" required>
+        <label for="age">Age</label>
+    </div><br>
+
+    <div class="user-box">
+        <label for="gender">Gender:</label><br><br>
+        <input type="radio" id="male" name="gender" th:field="*{gender}" value="Male"> Male
+        <input type="radio" id="female" name="gender" th:field="*{gender}" value="Female"> Female
+        <input type="radio" id="others" name="gender" th:field="*{gender}" value="Others"> Others
+    </div><br>
+
+    <div class="user-box">
+        <label for="lvl">Difficulty level expected for your trip:</label><br><br>
+        <input type="radio" id="easy" name="lvl" th:field="*{lvl}" value="Easy"> Easy
+        <input type="radio" id="moderate" name="lvl" th:field="*{lvl}" value="Moderate"> Moderate
+        <input type="radio" id="hard" name="lvl" th:field="*{lvl}" value="Hard"> Hard
+        <input type="radio" id="extreme" name="lvl" th:field="*{lvl}" value="Extreme"> Extreme
+    </div><br>
+
+    <div class="user-box">
+        <input type="email" placeholder="Enter Email" class="input" id="email" name="email" th:field="*{email}" required>
+        <label for="email">Email</label>
+    </div><br>
+
+    <div class="user-box">
+        <label for="budget">Your Budget:</label><br>
+        1,000 <input type="range" min="1000" max="20000" id="budget" name="budget" th:field="*{budget}" required> 20,000
+    </div><br>
+
+    <div class="user-box">
+        <label for="address">Address:</label><br>
+        <textarea cols="1" rows="1" class="input" id="address" name="address" th:field="*{address}" placeholder="Address" required></textarea>
+    </div><br>
+
+    <div class="user-box">
+        <input class="btn-primary" type="submit" value="Submit" onclick="return confirm('Are you sure you want to Submit your Information ?');">
+        <button class="btn-primary" type="reset" value="Reset">Refresh</button>
+    </div><br>
+</form>
+
+        </div>
+        </center>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+          <a href="#" ><div class="foot-top"><i class="fa-solid fa-arrow-up"></i></div></a>
+              <div class="foot_box">
+                  <aside id="ftr_li">
+                      <h5>ABOUT THRILLOPHILIA</h5>
+                      <li id="ftr_li"><a th:href="@{/treks/aboutus}" target="_blank">ABOUT US</a></li>
+                      <li id="ftr_li">WE ARE HIRING</li>
+                      <li id="ftr_li">THRILLOPHILIA REVIEWS</li>
+                      <li id="ftr_li">TERMS & CONDITIONS</li>
+                      <li id="ftr_li">PRIVACY POLICIES</li>
+                      <li id="ftr_li">COPYRIGHT POLICIES</li>
+                      <li id="ftr_li">SUPPORT</li>
+                      <li id="ftr_li">Beware of Frauds</li>
+                  </aside>
+                  <aside id="ftr_li">
+                      <h5>FOR SUPPLIERS</h5>
+                      <li id="ftr_li">LIST YOUR ACTIVITIES</li>
+                      <h5>FOR BRANDS</h5>
+                      <li id="ftr_li">PARTNER WITH US</li>
+                      <li id="ftr_li">DESTINATION MARKETING</li>
+                      
+                  </aside>
+                  <aside id="ftr_li">
+                      <h5>FOR TRAVELLERS</h5>
+                      <li >GIFT AN EXPERIENCE</li>
+                      <h5>FOR TRAVEL AGENTS</h5>
+                      <li id="ftr_li">SIGN UP AS A AGENT</li>
+                      <li id="ftr_li"><a th:href="@{/treks/admin/adminlogin}" target="_blank" >AGENT LOGIN</a></li>
+                  </aside>
+                  <aside>
+      
+                  </aside>
+              </div>
+      
+              
+              <div class="foot_box1">
+                  <div class="foot_box2 text-white"><strong style="font-size: xx-large; text-align: justify; justify-content: center;">Thrill.com</strong></div>
+                  <div class="foot_box3 text-white"><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook text-white"></i></a><a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank"><i class="fa-brands fa-instagram text-white"></i></a><a href="https://x.com/?lang=en" target="_blank"><i class="fa-brands fa-twitter text-white"></i></a><a href="https://in.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin text-white"></i></a><a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube text-white"></i></a></div>
+                  <div class="foot_box4 text-white">
+                      <p>© 2024 Thrill.com All rights reserved.</p>
+                      <p>The content and images used on this site are copyright protected and copyrights vests with the respective owners. The usage of the content and images on this website is intended to promote the works and no endorsement of the artist shall be implied. Unauthorized use is prohibited and punishable by law.</p>
+                  </div>
+              </div>
+      
+      </footer>
+
+
+
+<script type="text/javascript" src="../assets/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project1</title>
+    <!-- <link rel="stylesheet" href="uttarakhand.html"> -->
+    <link rel="stylesheet" href="../assets/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/project1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="/assets/bootstrap.min.js"></script>
+</head>
+<body >
+  <!-- <div class="container-sm"> -->
+    <!-- nav bar -->
+<!-- <div class="cont1 "> -->
+ <nav class="navbar navbar-expand-sm fixed-top">
+    <div class="container-fluid con ">
+      <a class="navbar-brand text-white" href="#" ><h2 style=" color: aqua;">Thrill<span>.</span> com</h2></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse con" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#top_trip">Top Trips</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" th:href="@{/treks/guide}" >Guide</a></li>
+              <li><a class="dropdown-item" th:href="@{/treks/safety}">Safety</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" th:href="@{/treks/aboutus}">About Us</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Shop with us</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+          <a class="btn btn-primary text-white " type="submit" th:href="@{/treks/Register}"  ><i class="fa-regular fa-circle-user" style="font-size: x-large;"></i></a>
+        </form>
+      </div>
+    </div>
+    </nav>
+<!-- </div> --> 
+
+<!-- search bar -->
+<div class="cont1">
+        
+            
+            <h1 style="color: rgb(229, 255, 0); text-shadow: 5px 5px 4px rgb(0, 0, 0); ">Start your Trekking journey</h1>
+    
+    <h2 class="text-white">आत्मनः अन्वेषणं कुरुत</h2>
+		<input class="s" type="text" id="search" placeholder="Search" aria-label="Search">
+  		  <i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+<div class="results" id="results">
+    <!-- Search results will be dynamically populated here -->
+</div>
+
+
+<!-- the intro box -->
+<div class="cont2 ">
+    
+    <div class="discover justify">
+        <h4 style="color: rgb(255, 230, 0);">Top Trekking Destinations in India</h4>
+        <br>
+        <p class="text-white" >India’s diverse landscapes offer a wealth of trekking opportunities, catering to all levels of adventurers. From the icy terrains of the Himalayas to the lush hills of the Western Ghats and the verdant trails of South India, there’s a trek for everyone. Here’s a guide to some of the most celebrated treks across the country:
+            
+            <a id="a" type="link"  data-bs-toggle="modal" data-bs-target="#exampleModal">Read more</a>
+        </p>
+  
+  <!-- Modal -->
+<div class="modal fade modal-dialog-scrollable" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel" >Top Trekking Destinations in India</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            
+            <p>India’s diverse landscapes offer a wealth of trekking opportunities, catering to all levels of adventurers. From the icy terrains of the Himalayas to the lush hills of the Western Ghats and the verdant trails of South India, there’s a trek for everyone. Here’s a guide to some of the most celebrated treks across the country:</p>
+            <h5>Himalayan Treks</h5>
+            <ol>
+                <li>Chadar Trek (Ladakh)</li>
+                <ul>
+                    <li>Elevation: 11,123 feet</li>
+                    <li>Difficulty: Hard</li>
+                    <li>Description: Traverse a frozen river in Ladakh's Zanskar region. Experience extreme cold and challenging terrain while exploring Zanskari villages and stunning ice formations.</li>
+                </ul>
+                <li>Brahmatal Trek (Uttarakhand)</li>
+                <ul>
+                    <li>Elevation: 7,677 to 12,250 feet</li>
+                    <li>Difficulty: Moderate</li>
+                    <li>Description: Enjoy views of the Himalayan peaks and the serene Brahmatal Lake. The trek offers a mix of lush forests and hidden Himalayan gems.</li>
+                </ul>
+                <li>Kedarkantha Trek (Uttarkashi)</li>
+                <ul>
+                    <li>Elevation: 6,000 to 12,500 feet</li>
+                    <li>Difficulty: Easy to Moderate</li>
+                    <li>Description: Known for its beautiful campsites and panoramic views of Swargarohini and Bandarpoonch. Ideal for both beginners and experienced trekkers.</li>
+                </ul>
+                <li>Har Ki Dun Trek (Uttarakhand)</li>
+                <ul>
+                    <li>Elevation: 6,000 to 11,700 feet</li>
+                    <li>Difficulty: Moderate</li>
+                    <li>Description: Trek to the highest peak in West Bengal, with breathtaking views of Everest, Kanchenjunga, and other Himalayan giants.</li>
+                </ul>
+                <li>Sandakphu Trek (West Bengal/Nepal)</li>
+                <ul>
+                    <li>Elevation: 6,400 to 11,950 feet</li>
+                    <li>Difficulty: Moderate</li>
+                    <li>Description: Trek to the highest peak in West Bengal, with breathtaking views of Everest, Kanchenjunga, and other Himalayan giants.</li>
+                </ul>
+                <li>Valley of Flowers Trek (Uttarakhand)</li>
+                <ul>
+                    <li>Elevation: 6,234 to 14,400 feet</li>
+                    <li>Difficulty: Moderate</li>
+                    <li>Description: A UNESCO World Heritage Site, this trek offers vibrant alpine flowers and diverse fauna, combined with a visit to the sacred Hemkund Sahib.</li>
+                </ul>
+                <li>Tarsar Marsar Trek (Jammu & Kashmir)</li>
+                <ul>
+                    <li>Elevation: 7,874 to 13,201 feet</li>
+                    <li>Difficulty: Easy to Moderate</li>
+                    <li>Description: Discover the twin lakes of Tarsar and Marsar in the Kashmir Valley, with stunning views of Kolahoi Peak.</li>
+                </ul>
+                <li>Hampta Pass Trek (Himachal Pradesh)</li>
+                <ul>
+                    <li>Elevation: 8,530 to 14,035 feet</li>
+                    <li>Difficulty: Moderate</li>
+                    <li>Description: Traverse diverse landscapes from lush valleys to barren high-altitude deserts, ending at the scenic Chandratal Lake.</li>
+                </ul>
+            </ol>
+            <p>These treks showcase the incredible variety of landscapes and challenges across India, making it a premier destination for trekking enthusiasts. Whether you're seeking the icy challenge of the Himalayas or the lush beauty of Southern India, there's a trek tailored for your adventure.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+</div>
+
+
+<div class="hr" id="top_trip"></div>
+   <div class="cont3" id="cont3">
+        <div class="discover2">
+            <h1>India Trekking Packages</h1>
+        </div>
+
+<div class="discover3">
+    <div class="card" th:each="card : ${cards}">
+        <a th:href="@{/treks/{id}(id=${card.id})}" target="_blank">
+            <div id="carouselExampleIndicators" class="carousel slide card-img-top" data-bs-ride="carousel">
+                <div class="carousel-inner" id="axx_${card.id}">
+                    <div class="carousel-item active" style="background-image: url('@{card.image1}');">
+                            <img th:src="@{${card.image1}}" class="d-block w-100" alt="Image of ${card.name}">
+                        </div>
+                        <div class="carousel-item" style="background-image: url('@{card.image2}'); ">
+                            <img th:src="@{${card.image2}}" class="d-block w-100" alt="Image of ${card.name}">
+                        </div>
+                        <div class="carousel-item" style="background-image: url('@{card.image3}'); ">
+                            <img th:src="@{${card.image3}}" class="d-block w-100" alt="Image of ${card.name}">
+                        </div>
+                        <div class="carousel-item" style="background-image: url('@{card.image4}');">
+                            <img th:src="@{${card.image4}}" class="d-block w-100" alt="Image of ${card.name}">
+                        </div>
+                        <div class="carousel-item" style="background-image: url('@{card.image5}');">
+                            <img th:src="@{${card.image5}}" class="d-block w-100" alt="Image of ${card.name}">
+                        </div>
+                        <div class="carousel-item" style="background-image: url('@{card.image6}');">
+                            <img th:src="@{${card.image6}}" class="d-block w-100" alt="Image of ${card.name}">
+                        </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="axx_${card.id}" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="axx_${card.id}" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </a>
+        <div class="card-body">
+            <h5 class="card-title" th:text="${card.name}"></h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" th:text="${card.duration}"></li>
+            <li class="list-group-item" th:text="${card.rating}"></li>
+            <li class="list-group-item" th:text="${card.price}"></li>
+        </ul>
+        <div class="card-body">
+            <button class="btn btn-lg btn-outline-info">
+                <i class="fa-solid fa-phone"></i>
+            </button>
+            <button type="button" class="btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="swoaham@gmail.com">
+                REQUEST A MAIL
+            </button>
+            <button class="btn btn-lg btn-outline-info">
+                <i class="fa-brands fa-whatsapp"></i>
+            </button>
+            <button class="btn btn-lg btn-outline-info">
+                <i class="fa-solid fa-share"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+        <div class="discover4">
+            <h1>!!Hurry Up!! <br> Bigger group get special offers upto 50%..</h1>
+        </div>
+    </div>
+
+
+<footer>
+    <a href="#" ><div class="foot-top"><i class="fa-solid fa-arrow-up"></i></div></a>
+        <div class="foot_box">
+            <aside id="ftr_li">
+                <h5>ABOUT THRILLOPHILIA</h5>
+                <li id="ftr_li"><a th:href="@{/treks/aboutus}" target="_blank">ABOUT US</a></li>
+                <li id="ftr_li">WE ARE HIRING</li>
+                <li id="ftr_li">THRILLOPHILIA REVIEWS</li>
+                <li id="ftr_li">TERMS & CONDITIONS</li>
+                <li id="ftr_li">PRIVACY POLICIES</li>
+                <li id="ftr_li">COPYRIGHT POLICIES</li>
+                <li id="ftr_li">SUPPORT</li>
+                <li id="ftr_li">Beware of Frauds</li>
+            </aside>
+            <aside id="ftr_li">
+                <h5>FOR SUPPLIERS</h5>
+                <li id="ftr_li">LIST YOUR ACTIVITIES</li>
+                <h5>FOR BRANDS</h5>
+                <li id="ftr_li">PARTNER WITH US</li>
+                <li id="ftr_li">DESTINATION MARKETING</li>
+                
+            </aside>
+            <aside id="ftr_li">
+                <h5>FOR TRAVELLERS</h5>
+                <li >GIFT AN EXPERIENCE</li>
+                <h5>FOR TRAVEL AGENTS</h5>
+                <li id="ftr_li">SIGN UP AS A AGENT</li>
+                <li id="ftr_li"><a th:href="@{/treks/admin/adminlogin}" target="_blank" >AGENT LOGIN</a></li>
+            </aside>
+            <aside>
+
+            </aside>
+        </div>
+
+        
+        <div class="foot_box1">
+            <div class="foot_box2 text-white"><strong style="font-size: xx-large; text-align: justify; justify-content: center;">Thrill.com</strong></div>
+            <div class="foot_box3 text-white"><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook text-white"></i></a><a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank"><i class="fa-brands fa-instagram text-white"></i></a><a href="https://x.com/?lang=en" target="_blank"><i class="fa-brands fa-twitter text-white"></i></a><a href="https://in.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin text-white"></i></a><a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube text-white"></i></a></div>
+            <div class="foot_box4 text-white">
+                <p>© 2024 Thrill.com All rights reserved.</p>
+                <p>The content and images used on this site are copyright protected and copyrights vests with the respective owners. The usage of the content and images on this website is intended to promote the works and no endorsement of the artist shall be implied. Unauthorized use is prohibited and punishable by law.</p>
+            </div>
+        </div>
+
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#search').on('input', function() {
+            var searchValue = $(this).val();
+            
+         // Check if the search input is empty
+            if (searchValue.trim() === "") {
+                // Clear the results if the search box is empty
+                $('#results').empty(); // Clear previous results
+                return; // Exit the function early
+            }
+            
+            $.ajax({
+                url: '/treks/search', // Ensure this URL matches your backend search endpoint
+                data: { query: searchValue }, // Use 'query' as the parameter name
+                success: function(data) {
+                	console.log(data);
+                	$('#results').empty(); // Clear previous results
+                    if (data.length > 0) {
+                        data.forEach(function(trekking) {
+                            // Assuming 'trekking' contains all the necessary properties
+                            $('#results').append(`
+                                <div class="card">
+                                    <a href="/treks/${trekking.id}" target="_blank">
+                                        <div id="carouselExampleIndicators${trekking.id}" class="carousel slide card-img-top" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="${trekking.image1}" class="d-block w-100" alt="${trekking.name}">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="${trekking.image2}" class="d-block w-100" alt="${trekking.name}">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="${trekking.image3}" class="d-block w-100" alt="${trekking.name}">
+                                                </div>
+                                                <!-- Add more images as needed -->
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators${trekking.id}" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators${trekking.id}" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                    </a>
+                                    <div class="card-body">
+                                        <h5 class="card-title">${trekking.name}</h5>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Duration: ${trekking.duration}</li>
+                                            <li class="list-group-item">Rating: ${trekking.rating}</li>
+                                            <li class="list-group-item">Price: ${trekking.price}</li>
+                                        </ul>
+                                        <div class="card-body">
+                                            <button class="btn btn-lg btn-outline-info">
+                                                <i class="fa-solid fa-phone"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="swoaham@gmail.com">
+                                                REQUEST A MAIL
+                                            </button>
+                                            <button class="btn btn-lg btn-outline-info">
+                                                <i class="fa-brands fa-whatsapp"></i>
+                                            </button>
+                                            <button class="btn btn-lg btn-outline-info">
+                                                <i class="fa-solid fa-share"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            `);
+                        });
+                    } else {
+                        $('#results').append('<p>No results found.</p>');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error fetching data: ", error); // Log any errors
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

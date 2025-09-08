@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Card Form</title>
+    <link rel="stylesheet" href="../assets/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/project1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* General page style */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f1f8e9; /* Soft Light Green Background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Header style */
+        h1 {
+            background: linear-gradient(45deg, #00bcd4, #00796b); /* Gradient Aqua */
+            color: white;
+            padding-top: 20px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            color: #00796b; /* Darker Aqua */
+            margin-left: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+        }
+        
+        
+        /* nav */
+		nav ul {
+		    list-style-type: none;
+		    padding: 0;
+		}
+		
+		nav ul li {
+		    display: inline;
+		    margin-right: 20px;
+		}
+		
+		nav ul li a {
+		    color: white;
+		    text-decoration: none;
+		    font-size: 18px;
+		}
+
+        /* Card Container */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+            margin: 20px auto;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 10px;
+            color: #00796b;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .card p {
+            margin: 5px 0;
+        }
+
+        .card-body h5 {
+            font-size: 1.2rem;
+            color: #00796b;
+        }
+
+        /* Form styling */
+        form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        form div {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #00796b;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+            border: 2px solid #00796b;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            border-color: #00bcd4;
+            outline: none;
+            background-color: #ffffff;
+        }
+
+        button {
+            background-color: #00796b;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #00bcd4;
+        }
+
+        /* Card Buttons */
+        .btn-aqua {
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-aqua:hover {
+            background-color: #00796b;
+        }
+
+        /* Carousel adjustments */
+        .carousel-inner {
+            max-height: 300px;
+        }
+
+        .carousel-item {
+            height: 100%;
+        }
+
+        .carousel-item img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Table styling as cards */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid #ddd;
+        }
+
+        th {
+            background-color: #00796b;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+
+        tr:hover {
+            background-color: #e0f7fa;
+        }
+
+        a {
+            color: #00796b;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: #ddd000;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            form {
+                padding: 20px;
+            }
+
+            button {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Manage Trekking Packages
+    	<nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a th:href="@{/treks/admin/adminadd}">Insert Trek Cards</a></li>
+                <li><a th:href="@{/treks/admin/}">View All Treks</a></li>
+            </ul>
+        </nav>
+    </h1>
+    
+    
+    <form th:action="@{/treks/admin/trekupdate/{id}(id=${card.id})}" th:object="${card}" method="post" >
+        <div>
+            <label for="id">Trip ID</label>
+            <input type="number" id="id" th:field="*{id}" placeholder="Enter card id" >
+        </div>
+        <div>
+            <label for="name">Trip Name</label>
+            <input type="text" id="name" th:field="*{name}" placeholder="Enter card name" required>
+        </div>
+        <div>
+            <label for="duration">Duration</label>
+            <input type="text" id="duration" th:field="*{duration}" placeholder="Enter duration" required>
+        </div>
+        <div>
+            <label for="price">Price</label>
+            <input type="text" id="price" th:field="*{price}" placeholder="Enter price" required>
+        </div>
+        <div>
+            <label for="rating">Rating</label>
+            <input type="text" id="rating" th:field="*{rating}" placeholder="Enter rating" required>
+        </div>
+         <div>
+        <label for="image1">Upload Image-1</label>
+        <input type="url" name="image1" th:field="*{image1}" placeholder="Enter Image URL" >
+    </div>
+    <div>
+        <label for="image2">Upload Image-2</label>
+        <input type="url" name="image2" th:field="*{image2}" placeholder="Enter Image URL" >
+    </div>
+    <div>
+        <label for="image3">Upload Image-3</label>
+        <input type="url" name="image3" th:field="*{image3}" placeholder="Enter Image URL" >
+    </div>
+    <div>
+        <label for="image4">Upload Image-4</label>
+        <input type="url" name="image4" th:field="*{image4}" placeholder="Enter Image URL" >
+    </div>
+    <div>
+        <label for="image5">Upload Image-5</label>
+        <input type="url" name="image5" th:field="*{image5}" placeholder="Enter Image URL" >
+    </div>
+    <div>
+        <label for="image6">Upload Image-6</label>
+        <input type="url" name="image6" th:field="*{image6}" placeholder="Enter Image URL" >
+    </div>
+        <div>
+            <label for="description1">Description 1</label>
+            <textarea id="description1" th:field="*{description1}" placeholder="Enter Details for first Paragraph" required></textarea>
+        </div>
+        <div>
+            <label for="description2">Description 2</label>
+            <textarea id="description2" th:field="*{description2}" placeholder="Enter Details for second Paragraph" required></textarea>
+        </div>
+        
+        <button type="submit">Update Card</button>
+    </form>
+
+
+
+    <script src="../assets/bootstrap.bundle.min.js"></script>
+</body>
+</html>

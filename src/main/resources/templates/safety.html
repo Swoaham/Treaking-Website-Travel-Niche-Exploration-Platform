@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap.min.css">
+    <script src="assets/bootstrap.min.js"></script>
+    <style>
+        body{
+            background-image: url(../assets/images/mountain-8079469.jpg);
+            background-size: cover;
+        }
+
+        
+
+            .safety {
+            height: auto; /* Changed to auto for better responsiveness */
+            max-width: 80vw; /* Set max width */
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 100px auto;
+            padding: 50px;
+            margin-bottom: 250px;
+            box-shadow: 0px 0px 15px 5px aqua;
+            border-radius: 40px;
+            color: white;
+        }
+        
+        h1, h2 ,h3{
+            text-align: center;
+            text-shadow: 5px 5px 5px aqua;
+            
+        }
+
+        
+footer{
+    min-height: fit-content;
+    /* height: 60em; */
+    width: 100vw;
+    background-color: rgb(94, 215, 234);
+
+}
+
+.foot-top{
+    height: 50px;
+    height: fit-content;
+    width: 50px;
+    border-radius: 100px;
+    background-color: rgb(94, 215, 234);
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+    transform: translateY(-200px);
+    margin: auto;
+    
+}
+
+
+.foot_box{
+    height: 40vh;
+    height: auto;
+    width: 60vw;
+    margin: auto;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    border-radius: 40px;
+    transform: translateY(-180px);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 20px;
+    padding: 35px;
+
+
+
+}
+
+
+
+
+
+.ftr_li{
+    display: flex;
+    color: gray;
+    text-decoration: none;
+    animation-name: screen;
+    /* -ms-text-size-adjust: auto; */
+    /* -webkit-text-size-adjust: auto; */
+
+   
+}
+/* @media (max-height:) {
+    font-size: 1px;
+} */
+
+
+.foot_box1{
+    height: 20vh;
+    width: 60vw;
+    margin: auto;
+    /* background-color: rgb(255, 255, 255); */
+    border-radius: 40px;
+    transform: translateY(-200px);
+    
+
+}
+
+.foot_box2{
+    background-color: gray;
+    height: 2px;
+    width: 80%;
+    text-align: center;
+    margin: 100px auto;
+
+}
+
+.foot_box3{
+    
+    height: 20px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    font-size: xx-large;
+    transform: translateY(-50px);
+    word-spacing: 20px;
+
+
+}
+
+.foot_box4{
+
+    height: auto;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    
+    
+}
+
+    </style>
+</head>
+<body>
+        <!-- nav bar -->
+
+    <nav class="navbar navbar-expand-lg fixed-top ">
+        <div class="container-fluid con ">
+          <a class="navbar-brand text-white" href="#" ><h2 style=" color: aqua;">Thrill<span>.</span> com</h2></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+               <div class="collapse navbar-collapse con" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" th:href="@{/treks/}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" th:href="@{/treks/#top_trip}">Top Trips</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" th:href="@{/treks/guide}">Guide</a></li>
+                  <li><a class="dropdown-item" th:href="@{/treks/safety}">Safety</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" th:href="@{/treks/aboutus}">About Us</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Shop with us</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+              <a class="btn btn-primary text-white " type="submit" th:href="@{/treks/Register}"><i class="fa-regular fa-circle-user" style="font-size: x-large;"></i></a>
+            </form>
+          </div>
+        </div>
+        </nav>
+
+
+        <!-- Saftey -->
+<div class="safety">
+ <h1>Thrill.com</h1>
+<br><br>
+<h2>Safety First</h2>
+
+<p>
+    At Peak Ventures, your safety is our top priority. We understand that trekking in remote and challenging environments requires careful planning and attention to detail. That’s why we’ve implemented a comprehensive safety program designed to ensure that you have a secure and enjoyable adventure from start to finish.
+</p>
+
+<h2>Our Safety Measures</h2>
+<ul>
+<li>
+    <strong>Experienced Guides</strong>: Our guides are highly trained professionals with extensive experience in trekking and wilderness safety. They are certified in first aid, wilderness medicine, and emergency response to handle any situation that may arise.
+</li>
+<li>
+ <strong>Thorough Risk Assessments</strong>: Before every trek, we conduct detailed risk assessments of the route, weather conditions, and potential hazards. This proactive approach allows us to implement necessary precautions and adapt plans as needed.
+</li>
+<li>
+ <strong>Emergency Preparedness</strong>: Each trek is equipped with first aid kits, satellite phones, and emergency evacuation plans. We maintain close communication with local emergency services and have contingency plans for unforeseen situations.
+</li>
+<li>
+ <strong>Health and Safety Briefings</strong>: Prior to your trek, we provide comprehensive safety briefings covering topics such as acclimatization, equipment use, weather conditions, and emergency procedures. Your guide will also ensure that you are comfortable with the safety protocols.
+</li>
+<li>
+ <strong>High-Quality Gear</strong>: We provide or recommend the use of high-quality trekking gear and equipment to ensure your comfort and safety. From sturdy footwear to weather-appropriate clothing, we’ll help you choose the right gear for your adventure.
+</li>
+<li>
+ <strong>Regular Training</strong>: Our team undergoes regular training and certification to stay updated on the latest safety practices and technologies. This ensures that we are always prepared to manage any potential risks effectively.
+</li>
+<li>
+ <strong>Health Considerations</strong>: We take your health seriously and require a pre-trek medical assessment to ensure you’re fit for the trek. We also monitor your well-being throughout the journey and provide support if needed.
+</li>
+</ul>
+
+<h2>Your Role in Safety</h2>
+<p>While we take every precaution to ensure your safety, your cooperation is essential. Please:</p>
+<ul>
+<li>
+    Follow your guide’s instructions and safety guidelines at all times.
+</li>
+<li>
+    Inform your guide of any health issues or concerns before and during the trek.
+</li>
+<li>
+    Use the provided safety gear and adhere to recommended practices for acclimatization and hydration.
+</li>
+</ul>
+
+<h2>Our Commitment</h2>
+<p>
+    At Peak Ventures, we are dedicated to providing you with a safe trekking experience so that you can focus on enjoying the adventure. If you have any questions or concerns about our safety measures, please don’t hesitate to contact us. Your peace of mind is as important to us as your adventure.
+</p>
+<h4>Let’s embark on your journey with confidence and excitement!</h4>
+
+</div>
+
+
+<footer>
+    <a href="#" ><div class="foot-top"><i class="fa-solid fa-arrow-up"></i></div></a>
+        <div class="foot_box">
+            <aside id="ftr_li">
+                <h5>ABOUT THRILLOPHILIA</h5>
+                <li id="ftr_li"><a th:href="@{/treks/aboutus}" target="_blank">ABOUT US</a></li>
+                <li id="ftr_li">WE ARE HIRING</li>
+                <li id="ftr_li">THRILLOPHILIA REVIEWS</li>
+                <li id="ftr_li">TERMS & CONDITIONS</li>
+                <li id="ftr_li">PRIVACY POLICIES</li>
+                <li id="ftr_li">COPYRIGHT POLICIES</li>
+                <li id="ftr_li">SUPPORT</li>
+                <li id="ftr_li">Beware of Frauds</li>
+            </aside>
+            <aside id="ftr_li">
+                <h5>FOR SUPPLIERS</h5>
+                <li id="ftr_li">LIST YOUR ACTIVITIES</li>
+                <h5>FOR BRANDS</h5>
+                <li id="ftr_li">PARTNER WITH US</li>
+                <li id="ftr_li">DESTINATION MARKETING</li>
+                
+            </aside>
+            <aside id="ftr_li">
+                <h5>FOR TRAVELLERS</h5>
+                <li >GIFT AN EXPERIENCE</li>
+                <h5>FOR TRAVEL AGENTS</h5>
+                <li id="ftr_li">SIGN UP AS A AGENT</li>
+                <li id="ftr_li"><a th:href="@{/treks/admin/adminlogin}" target="_blank" >AGENT LOGIN</a></li>
+            </aside>
+            <aside>
+
+            </aside>
+        </div>
+
+        
+        <div class="foot_box1">
+            <div class="foot_box2 text-white"><strong style="font-size: xx-large; text-align: justify; justify-content: center;">Thrill.com</strong></div>
+            <div class="foot_box3 text-white"><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook text-white"></i></a><a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank"><i class="fa-brands fa-instagram text-white"></i></a><a href="https://x.com/?lang=en" target="_blank"><i class="fa-brands fa-twitter text-white"></i></a><a href="https://in.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin text-white"></i></a><a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube text-white"></i></a></div>
+            <div class="foot_box4 text-white">
+                <p>© 2024 Thrill.com All rights reserved.</p>
+                <p>The content and images used on this site are copyright protected and copyrights vests with the respective owners. The usage of the content and images on this website is intended to promote the works and no endorsement of the artist shall be implied. Unauthorized use is prohibited and punishable by law.</p>
+            </div>
+        </div>
+
+</footer>
+
+<script type="text/javascript" src="../assets/bootstrap.min.js"></script>
+  
+</body>
+</html>

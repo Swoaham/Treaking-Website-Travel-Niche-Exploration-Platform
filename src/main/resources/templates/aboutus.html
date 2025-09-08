@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="project-1.html"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap.min.css">
+    <script src="/assets/bootstrap.min.js"></script>
+    <style>
+        body{
+            background-image: url(/assets/images/mountain-8079469.jpg);
+            background-size: cover;
+        }
+
+        
+        .About_us{
+            height: 150vh;
+            width: 80vw;
+            background-color: rgba(0, 0, 0, 0.499);
+            margin: 100px auto;
+            margin-bottom: 300PX;
+            padding: 50px;
+            box-shadow: 0px 0px 15px 5px aqua;
+            border-radius: 40px;
+            color: white;
+        }
+       
+        h1, h2 ,h3{
+            text-align: center;
+            text-shadow: 5px 5px 5px aqua;
+            
+        }
+
+        
+
+footer{
+    min-height: fit-content;
+    /* height: 60em; */
+    width: 100vw;
+    background-color: rgb(94, 215, 234);
+
+}
+
+.foot-top{
+    height: 50px;
+    height: fit-content;
+    width: 50px;
+    border-radius: 100px;
+    background-color: rgb(94, 215, 234);
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+    transform: translateY(-200px);
+    margin: auto;
+    
+}
+
+
+.foot_box{
+    height: 40vh;
+    height: auto;
+    width: 60vw;
+    margin: auto;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    border-radius: 40px;
+    transform: translateY(-180px);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 20px;
+    padding: 35px;
+
+
+
+}
+
+
+
+
+
+.ftr_li{
+    display: flex;
+    color: gray;
+    text-decoration: none;
+    animation-name: screen;
+    /* -ms-text-size-adjust: auto; */
+    /* -webkit-text-size-adjust: auto; */
+
+   
+}
+/* @media (max-height:) {
+    font-size: 1px;
+} */
+
+
+.foot_box1{
+    height: 20vh;
+    width: 60vw;
+    margin: auto;
+    /* background-color: rgb(255, 255, 255); */
+    border-radius: 40px;
+    transform: translateY(-200px);
+    
+
+}
+
+.foot_box2{
+    background-color: gray;
+    height: 2px;
+    width: 80%;
+    text-align: center;
+    margin: 100px auto;
+
+}
+
+.foot_box3{
+    
+    height: 20px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    font-size: xx-large;
+    transform: translateY(-50px);
+    word-spacing: 20px;
+
+
+}
+
+.foot_box4{
+
+    height: auto;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    
+    
+}
+
+
+        @media (max-width: 768px) {
+            .a {
+                width: 90%; /* Full width on smaller screens */
+                margin: 20px; /* Adjust margin */
+            }
+
+            .foot_box {
+                flex-direction: column; /* Stack items vertically */
+                align-items: center; /* Center items */
+            }
+
+            .foot_box aside {
+                min-width: 100%; /* Full width for each aside on small screens */
+                margin: 10px 0; /* Adjust margin for vertical stacking */
+            }
+            
+            }
+
+  
+
+    </style>
+</head>
+<body>
+        <!-- nav bar -->
+
+    <nav class="navbar navbar-expand-lg fixed-top ">
+        <div class="container-fluid con ">
+          <a class="navbar-brand text-white" href="#" ><h2 style=" color: aqua;">Thrill<span>.</span> com</h2></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse con" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" th:href="@{/treks/}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" th:href="@{/treks/#top_trip}">Top Trips</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" th:href="@{/treks/guide}">Guide</a></li>
+                  <li><a class="dropdown-item" th:href="@{/treks/safety}">Safety</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" th:href="@{/treks/aboutus}">About Us</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Shop with us</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+              <a class="btn btn-primary text-white " type="submit" th:href="@{/treks/Register}"><i class="fa-regular fa-circle-user" style="font-size: x-large;"></i></a>
+            </form>
+          </div>
+        </div>
+        </nav>
+
+
+        <!-- About us -->
+<div class="About_us">
+ <h1>Thrill.com</h1>
+<br>
+<br>
+<h2>Welcome to Peak Ventures!</h2>
+
+<p>
+    At Peak Ventures, we're passionate about the great outdoors and committed to making your trekking adventures extraordinary. Founded in 2015 by a group of avid trekkers and outdoor enthusiasts, our mission is to inspire, guide, and support trekkers of all levels to explore the world’s most breathtaking landscapes.
+</p>
+
+<h2>Our Journey</h2>
+<p>
+What started as a shared dream among friends has grown into a leading platform for trekking enthusiasts worldwide. Our team brings together decades of experience in trekking, guiding, and travel, ensuring that every trek you embark on with us is safe, exhilarating, and unforgettable.
+</p>
+
+<h2>Why Choose Us?</h2>
+<ul>
+<li>
+    <strong>Guides</strong>: Our certified guides are not only experienced trekkers but also knowledgeable about local cultures, wildlife, and geography. They’re dedicated to providing you with a rich and immersive experience.
+</li>
+<li>
+ <strong>Tailored Adventures</strong>: Whether you're a seasoned trekker looking for a challenging expedition or a beginner wanting a gentle introduction to trekking, we offer a range of meticulously planned treks to suit your needs.
+</li>
+<li>
+ <strong>Sustainable Travel</strong>: We believe in preserving the beauty of nature for future generations. Our eco-friendly practices and partnerships with local communities help ensure that our adventures have a positive impact on the environment and the regions we visit.
+</li>
+<li>
+ <strong>Personalized Service</strong>: From the moment you book your trek to the time you return home, we’re here to support you every step of the way. Our customer service team is available to answer your questions, assist with preparations, and ensure you have a smooth and enjoyable experience.
+</li>
+</ul>
+
+<h2>Our Values</h2>
+<ul>
+<li>
+<strong>Adventure with Integrity</strong> : We prioritize safety, respect for nature, and responsible travel practices in all our treks.
+</li>
+<li>
+    <strong>Passion for Exploration</strong> : We believe that adventure enriches the soul and fosters a deeper connection with the world.
+</li>
+<li>
+<strong>Commitment to Community</strong>: We support local economies and collaborate with communities to create meaningful travel experiences.
+</li>
+</ul>
+
+<h2>Join Us on Your Next Adventure</h2>
+<p>
+    At Peak Ventures, we’re more than just a trekking company—we’re your partners in discovery. Explore our website to find your perfect trek and start your journey with us today. Let’s reach new heights together!
+</p>
+<h4>Feel free to adjust any details to better match the specific ethos and offerings of your trekking company!</h4>
+
+</div>
+
+  
+<footer>
+    <a href="#" ><div class="foot-top"><i class="fa-solid fa-arrow-up"></i></div></a>
+        <div class="foot_box">
+            <aside id="ftr_li">
+                <h5>ABOUT THRILLOPHILIA</h5>
+                <li id="ftr_li"><a href="#" target="_blank">ABOUT US</a></li>
+                <li id="ftr_li">WE ARE HIRING</li>
+                <li id="ftr_li">THRILLOPHILIA REVIEWS</li>
+                <li id="ftr_li">TERMS & CONDITIONS</li>
+                <li id="ftr_li">PRIVACY POLICIES</li>
+                <li id="ftr_li">COPYRIGHT POLICIES</li>
+                <li id="ftr_li">SUPPORT</li>
+                <li id="ftr_li">Beware of Frauds</li>
+            </aside>
+            <aside id="ftr_li">
+                <h5>FOR SUPPLIERS</h5>
+                <li id="ftr_li">LIST YOUR ACTIVITIES</li>
+                <h5>FOR BRANDS</h5>
+                <li id="ftr_li">PARTNER WITH US</li>
+                <li id="ftr_li">DESTINATION MARKETING</li>
+                
+            </aside>
+            <aside id="ftr_li">
+                <h5>FOR TRAVELLERS</h5>
+                <li >GIFT AN EXPERIENCE</li>
+                <h5>FOR TRAVEL AGENTS</h5>
+                <li id="ftr_li">SIGN UP AS A AGENT</li>
+                <li id="ftr_li"><a th:href="@{/treks/admin/adminlogin}" target="_blank" >AGENT LOGIN</a></li>
+            </aside>
+            <aside>
+
+            </aside>
+        </div>
+
+        
+        <div class="foot_box1">
+            <div class="foot_box2 text-white"><strong style="font-size: xx-large; text-align: justify; justify-content: center;">Thrill.com</strong></div>
+            <div class="foot_box3 text-white"><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook text-white"></i></a><a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank"><i class="fa-brands fa-instagram text-white"></i></a><a href="https://x.com/?lang=en" target="_blank"><i class="fa-brands fa-twitter text-white"></i></a><a href="https://in.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin text-white"></i></a><a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube text-white"></i></a></div>
+            <div class="foot_box4 text-white">
+                <p>© 2024 Thrill.com All rights reserved.</p>
+                <p>The content and images used on this site are copyright protected and copyrights vests with the respective owners. The usage of the content and images on this website is intended to promote the works and no endorsement of the artist shall be implied. Unauthorized use is prohibited and punishable by law.</p>
+            </div>
+        </div>
+
+</footer>
+
+
+</body>
+</html>
