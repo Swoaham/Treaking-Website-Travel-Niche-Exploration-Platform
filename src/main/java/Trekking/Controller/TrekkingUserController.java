@@ -63,7 +63,7 @@ public class TrekkingUserController {
     
      @GetMapping("/")
      public String showAllTreks(Model model) {
-    	
+    	System.out.println("Cards count = " + trekkingService.getAllTreks().size());
         model.addAttribute("cards",  trekkingService.getAllTreks());
         return "project-1"; // Return the list of trekking packages to the user
     }
