@@ -69,7 +69,7 @@ public class TrekkingServiceIMPL  implements TrekkingService{
 	
     // Get all trekking packages
     @Override
-    public Iterable<Trekking> getAllTreks() {
+    public List<Trekking> getAllTreks() {
         return ts.findAll(); // Retrieves all trekking packages
     }
 
