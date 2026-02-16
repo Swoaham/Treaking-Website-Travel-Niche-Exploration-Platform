@@ -17,12 +17,9 @@ import Trekking.entities.Admin;
 
 public interface TrekkingService {
 
-//	List<Trekking> getAllUsers();
+	List<Trekking> getAllUsers();
 //	Iterable<Trekking> getAllUsers();
 
-	
-
-    Iterable<Trekking> getAllTreks();
 
     Trekking getTrekkingById(Long id);
 
