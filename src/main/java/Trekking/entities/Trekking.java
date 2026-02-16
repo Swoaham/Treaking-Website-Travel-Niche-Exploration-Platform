@@ -19,13 +19,21 @@ public class Trekking {
 //    @ElementCollection
 //    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 //    private List<Image> images;
+	@Column(columnDefinition = "TEXT")
     private String image1;
+	@Column(columnDefinition = "TEXT")
     private String image2;
+	@Column(columnDefinition = "TEXT")
     private String image3;
+	@Column(columnDefinition = "TEXT")
     private String image4;
+	@Column(columnDefinition = "TEXT")
     private String image5;
+	@Column(columnDefinition = "TEXT")
     private String image6;
+	@Column(columnDefinition = "TEXT")
     private String description1;
+	@Column(columnDefinition = "TEXT")
     private String description2;
     
     
