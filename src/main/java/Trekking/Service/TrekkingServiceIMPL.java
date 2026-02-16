@@ -106,13 +106,13 @@ public class TrekkingServiceIMPL  implements TrekkingService{
 //    FOR USER
     
     @Override
-    public Iterable<User> getAllUsers() {
+    public List<User> getAllUsers() {
         return us.findAll(); // Retrieves all trekking packages
     }
     
     @Override
-    public void saveUser(User trek) {
-        us.save(trek); // Save the user (if ID is null, it's an insert; otherwise, it's an update)
+    public void saveUser(User user) {
+        us.save(user); // Save the user (if ID is null, it's an insert; otherwise, it's an update)
     }
 
  // Delete a trekking package by its ID
